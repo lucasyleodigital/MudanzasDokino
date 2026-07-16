@@ -1,0 +1,8 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mudanzas de larga distancia">
+  <circle cx="64" cy="64" r="60" fill="#e7eff8"/>
+  <path d="M24 90 Q64 60 104 90" fill="none" stroke="#164379" stroke-width="4" stroke-dasharray="6 6"/>
+  <rect x="32" y="68" width="30" height="18" rx="4" fill="#1f5fa8" stroke="#164379" stroke-width="3"/>
+  <circle cx="38" cy="88" r="4" fill="#164379"/>
+  <circle cx="56" cy="88" r="4" fill="#164379"/>
+  <path d="M84 52 a10 10 0 1 1 -0.01 0 Z M84 42 a12 14 0 0 1 12 14 c0 8 -12 22 -12 22 s-12 -14 -12 -22 a12 14 0 0 1 12 -14 Z" fill="#e0952e" stroke="#a8641a" stroke-width="2"/>
+</svg>

@@ -1,0 +1,18 @@
+rules_version = '2';
+
+// Reglas de seguridad para el futuro blog auto-gestionable (patrón Reservify,
+// ver brief técnico sección 6 y 8). Aplican a un proyecto Firebase que aún
+// no existe — ver README.md de esta carpeta para el plan de activación.
+//
+// Colección: posts
+//   - Lectura pública SOLO de posts con published == true.
+//   - Escritura (crear/editar/borrar) SOLO para usuarios autenticados vía
+//     Firebase Auth (el panel de administración).
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /posts/{postId} {
+      allow read: if resource.data.published == true;
+      allow write: if request.auth != null;
+    }
+  }
+}
