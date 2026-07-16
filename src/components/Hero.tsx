@@ -3,13 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SITE, whatsappHref } from "@/lib/constants";
-
-const STATS = [
-  { value: "300+", label: "Mudanzas realizadas" },
-  { value: "5★", label: "Valoración media" },
-  { value: "24h", label: "Respuesta garantizada" },
-  { value: "BCN · ESP", label: "Cobertura nacional" },
-];
+import Counter from "@/components/Counter";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -19,265 +13,326 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#0f172a]">
-      {/* Grid pattern background */}
+    <section className="relative min-h-[92vh] overflow-hidden bg-[#060d1e] flex flex-col">
+      {/* ── Animated blobs ─────────────────────────────── */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        className="pointer-events-none absolute -bottom-32 -left-32 h-[600px] w-[600px] rounded-full"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
+          background: "radial-gradient(circle, rgba(249,115,22,0.18) 0%, transparent 70%)",
+          animation: "blob-drift 12s ease-in-out infinite",
         }}
       />
-      {/* Blue glow top-right */}
-      <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-blue-600 opacity-10 blur-3xl" />
-      {/* Orange glow bottom-left */}
-      <div className="pointer-events-none absolute -bottom-20 left-10 h-72 w-72 rounded-full bg-orange-500 opacity-10 blur-3xl" />
+      <div
+        className="pointer-events-none absolute -right-20 -top-20 h-[500px] w-[500px] rounded-full"
+        style={{
+          background: "radial-gradient(circle, rgba(37,99,235,0.2) 0%, transparent 70%)",
+          animation: "blob-drift-alt 9s ease-in-out infinite",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute top-1/2 left-[40%] h-[350px] w-[350px] rounded-full -translate-x-1/2 -translate-y-1/2"
+        style={{
+          background: "radial-gradient(circle, rgba(168,85,247,0.08) 0%, transparent 70%)",
+          animation: "blob-drift 15s ease-in-out infinite 3s",
+        }}
+      />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-8 px-5 pt-14 pb-0 md:grid-cols-[1fr_auto] md:pt-20 lg:gap-16">
-        {/* Left: text */}
-        <div
-          className={`pb-14 transition-all duration-700 ease-out md:pb-20 ${
-            mounted ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
-          }`}
-        >
-          <span className="inline-flex items-center gap-2 rounded-full border border-orange-400/30 bg-orange-400/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-orange-400">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-orange-400" />
-            {SITE.availability} · Barcelona · España
-          </span>
+      {/* ── Grid overlay ───────────────────────────────── */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.035]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
 
-          <h1 className="mt-5 font-heading text-4xl font-extrabold leading-[1.1] text-white md:text-5xl lg:text-6xl">
-            Tu mudanza,{" "}
-            <span className="text-orange-400">perfecta</span>
-            <br />
-            de principio a fin
-          </h1>
+      {/* ── Content ────────────────────────────────────── */}
+      <div className="relative flex flex-1 items-center">
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-[1fr_460px] md:py-20 lg:gap-20">
 
-          <p className="mt-5 max-w-lg text-lg leading-relaxed text-slate-300">
-            Furgonetas propias, plataforma elevadora y equipo directo —{" "}
-            <strong className="font-semibold text-white">
-              sin intermediarios ni subcontratas
-            </strong>
-            . Presupuesto personalizado sin compromiso.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/presupuesto/"
-              className="inline-flex items-center gap-2 rounded-xl bg-orange-500 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-orange-500/25 transition-all hover:-translate-y-0.5 hover:bg-orange-600 hover:shadow-orange-500/40"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                <rect x="9" y="3" width="6" height="4" rx="1" stroke="currentColor" strokeWidth="2"/>
-                <path d="M9 12h6M9 16h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-              Pedir presupuesto gratis
-            </Link>
-            <a
-              href={whatsappHref("Hola, quiero información sobre una mudanza.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/8 px-7 py-4 text-sm font-semibold text-white backdrop-blur transition-all hover:bg-white/15"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.63 1.44 5.17L2 22l5.09-1.53a9.87 9.87 0 0 0 4.95 1.33c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm4.51 13.87c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01a.9.9 0 0 0-.66.31c-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.17 1.73 2.64 4.2 3.7.59.25 1.05.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z" />
-              </svg>
-              Escribir por WhatsApp
-            </a>
-          </div>
-
-          {/* Trust badges inline */}
-          <div className="mt-8 flex flex-wrap gap-4">
-            {["Vehículo propio", "Sin subcontratas", "Seguro de transporte", "Presupuesto gratis"].map((badge) => (
-              <span key={badge} className="flex items-center gap-1.5 text-xs font-medium text-slate-400">
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
-                  <circle cx="6.5" cy="6.5" r="6.5" fill="#22c55e" fillOpacity="0.2"/>
-                  <path d="M3.5 6.5l2 2 4-4" stroke="#4ade80" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                {badge}
+          {/* Left: copy */}
+          <div
+            className={`transition-all duration-1000 ease-out ${
+              mounted ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}
+          >
+            {/* Badge */}
+            <span className="inline-flex items-center gap-2 rounded-full border border-orange-400/25 bg-orange-400/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-orange-400">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-50" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-orange-400" />
               </span>
-            ))}
-          </div>
-        </div>
+              Barcelona · Cataluña · España
+            </span>
 
-        {/* Right: Truck illustration */}
-        <div
-          className={`hidden transition-all delay-200 duration-700 ease-out md:block ${
-            mounted ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
-        >
-          <div className="float-anim pb-2">
-            <MovingTruckSVG />
+            {/* Headline */}
+            <h1 className="mt-6 font-heading font-extrabold leading-[1.05] text-white">
+              <span className="block text-5xl md:text-6xl lg:text-7xl">
+                Tu mudanza,
+              </span>
+              <span className="block text-5xl text-gradient-orange md:text-6xl lg:text-7xl">
+                perfecta.
+              </span>
+              <span className="block mt-1 text-3xl font-bold text-slate-300 md:text-4xl lg:text-5xl">
+                De principio a fin.
+              </span>
+            </h1>
+
+            {/* Subtext */}
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-400">
+              Furgonetas propias, plataforma elevadora y equipo directo.{" "}
+              <strong className="font-semibold text-slate-200">
+                Sin subcontratas, sin intermediarios.
+              </strong>{" "}
+              Presupuesto exacto antes de confirmar nada.
+            </p>
+
+            {/* CTAs */}
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/presupuesto/"
+                className="btn-glow group inline-flex items-center gap-2.5 rounded-xl bg-orange-500 px-7 py-4 text-sm font-bold text-white shadow-xl shadow-orange-500/30 transition-all duration-300 hover:-translate-y-1 hover:bg-orange-600 hover:shadow-orange-500/50"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <rect x="9" y="3" width="6" height="4" rx="1" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M9 12h6M9 16h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+                Pedir presupuesto gratis
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="transition-transform group-hover:translate-x-1" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+
+              <a
+                href={whatsappHref("Hola, quiero información sobre una mudanza.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass inline-flex items-center gap-2.5 rounded-xl px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-white/10"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#4ade80" aria-hidden="true">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.63 1.44 5.17L2 22l5.09-1.53a9.87 9.87 0 0 0 4.95 1.33c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm4.51 13.87c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01a.9.9 0 0 0-.66.31c-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.17 1.73 2.64 4.2 3.7.59.25 1.05.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/>
+                </svg>
+                WhatsApp directo
+              </a>
+            </div>
+
+            {/* Trust badges */}
+            <div className="mt-8 flex flex-wrap gap-5">
+              {[
+                "Vehículo propio",
+                "Sin subcontratas",
+                "Seguro de transporte",
+                "Presupuesto gratis",
+              ].map((b) => (
+                <span key={b} className="flex items-center gap-1.5 text-xs font-medium text-slate-500">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <circle cx="7" cy="7" r="7" fill="rgba(74,222,128,0.15)"/>
+                    <path d="M4 7l2 2 4-4" stroke="#4ade80" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  {b}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: truck */}
+          <div
+            className={`hidden transition-all delay-300 duration-1000 ease-out md:flex md:items-end md:justify-center ${
+              mounted ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+            }`}
+          >
+            <div className="float-anim">
+              <TruckSVG />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Stats strip */}
-      <div className="relative border-t border-white/8 bg-white/4 backdrop-blur-sm">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-white/8 px-5 md:grid-cols-4">
-          {STATS.map((stat) => (
-            <div key={stat.label} className="flex flex-col items-center py-5 text-center">
-              <span className="font-heading text-2xl font-extrabold text-orange-400">
-                {stat.value}
-              </span>
-              <span className="mt-0.5 text-xs font-medium text-slate-500">
-                {stat.label}
-              </span>
-            </div>
-          ))}
+      {/* ── Stats strip ────────────────────────────────── */}
+      <div className="relative border-t border-white/[0.06] bg-white/[0.03] backdrop-blur-sm">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-white/[0.06] px-6 md:grid-cols-4">
+          <StatItem>
+            <Counter target={300} suffix="+" className="font-heading text-3xl font-extrabold text-gradient-orange" />
+            <span className="text-xs font-medium text-slate-500">Mudanzas realizadas</span>
+          </StatItem>
+          <StatItem>
+            <Counter target={5} suffix="★" className="font-heading text-3xl font-extrabold text-gradient-orange" />
+            <span className="text-xs font-medium text-slate-500">Valoración media</span>
+          </StatItem>
+          <StatItem>
+            <Counter target={24} suffix="h" className="font-heading text-3xl font-extrabold text-gradient-orange" />
+            <span className="text-xs font-medium text-slate-500">Respuesta garantizada</span>
+          </StatItem>
+          <StatItem>
+            <span className="font-heading text-3xl font-extrabold text-gradient-orange">BCN·ESP</span>
+            <span className="text-xs font-medium text-slate-500">Cobertura nacional</span>
+          </StatItem>
         </div>
       </div>
     </section>
   );
 }
 
-function MovingTruckSVG() {
+function StatItem({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex flex-col items-center gap-1 py-6 text-center">
+      {children}
+    </div>
+  );
+}
+
+function TruckSVG() {
   return (
     <svg
-      viewBox="0 0 480 290"
+      viewBox="0 0 520 300"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-[420px] xl:w-[480px]"
+      className="w-full max-w-[460px] drop-shadow-2xl"
       aria-hidden="true"
     >
-      {/* Ground shadow */}
-      <ellipse cx="260" cy="265" rx="200" ry="10" fill="#000" opacity="0.35" />
+      {/* Glow under truck */}
+      <ellipse cx="275" cy="278" rx="210" ry="14" fill="#f97316" opacity="0.12" />
+      <ellipse cx="275" cy="280" rx="180" ry="8" fill="#000" opacity="0.3" />
 
       {/* ── CARGO BOX ── */}
-      <rect x="145" y="58" width="310" height="175" rx="6" fill="#1d4ed8" />
-      {/* Lighter top edge */}
-      <rect x="145" y="58" width="310" height="6" rx="3" fill="#2563eb" />
+      {/* Main body */}
+      <rect x="155" y="52" width="330" height="185" rx="7" fill="#1d4ed8" />
+      {/* Roof strip */}
+      <rect x="155" y="52" width="330" height="7" rx="4" fill="#2563eb" />
+      {/* Body gradient overlay */}
+      <rect x="155" y="52" width="330" height="185" rx="7"
+        fill="url(#bodyGrad)" />
+      {/* Side reflection */}
+      <rect x="155" y="52" width="60" height="185"
+        fill="url(#sideRefl)" rx="7 0 0 7" />
+
       {/* Rear door panel */}
-      <rect x="385" y="58" width="70" height="175" rx="0 5 5 0" fill="#1e40af" />
-      <line x1="385" y1="58" x2="385" y2="233" stroke="#1d4ed8" strokeWidth="2" />
-      {/* Vertical door handles */}
-      <rect x="374" y="135" width="8" height="30" rx="4" fill="#3b82f6" opacity="0.6" />
-      {/* Orange stripe */}
-      <rect x="145" y="198" width="310" height="20" fill="#f97316" />
-      {/* Branding */}
-      <text
-        x="263"
-        y="148"
-        textAnchor="middle"
-        fill="white"
-        fontFamily="Manrope, system-ui, sans-serif"
-        fontSize="17"
-        fontWeight="800"
-        letterSpacing="1.5"
-      >
+      <rect x="412" y="52" width="73" height="185" rx="0 6 6 0" fill="#1e40af" />
+      <line x1="412" y1="52" x2="412" y2="237" stroke="#1d4ed8" strokeWidth="1.5" />
+      {/* Door handle */}
+      <rect x="400" y="136" width="9" height="32" rx="4.5" fill="#3b82f6" opacity="0.55" />
+
+      {/* Orange branding stripe */}
+      <rect x="155" y="205" width="330" height="22" fill="#f97316" />
+      {/* Stripe shine */}
+      <rect x="155" y="205" width="330" height="8" fill="rgba(255,255,255,0.12)" />
+
+      {/* Company name */}
+      <text x="270" y="155" textAnchor="middle"
+        fill="white" fontFamily="Manrope, system-ui, sans-serif"
+        fontSize="18" fontWeight="800" letterSpacing="2">
         MUDANZAS DOKINO
       </text>
-      {/* Sub tagline */}
-      <text
-        x="263"
-        y="170"
-        textAnchor="middle"
-        fill="rgba(255,255,255,0.5)"
-        fontFamily="system-ui, sans-serif"
-        fontSize="9"
-        letterSpacing="3"
-      >
+      <text x="270" y="176" textAnchor="middle"
+        fill="rgba(255,255,255,0.4)" fontFamily="system-ui, sans-serif"
+        fontSize="8.5" letterSpacing="4">
         BARCELONA · CATALUÑA · ESPAÑA
       </text>
-      {/* Orange diamond logo mark */}
-      <polygon points="224,115 234,105 244,115 234,125" fill="#f97316" />
+
+      {/* Logo diamond */}
+      <polygon points="230,120 242,108 254,120 242,132" fill="#f97316" />
+      <polygon points="230,120 242,108 254,120 242,132" fill="url(#diamondGrad)" />
 
       {/* ── CAB ── */}
-      <path
-        d="M 55 130 L 148 108 L 148 233 L 52 233 Z"
-        fill="#1e40af"
-      />
-      {/* Cab roof line */}
-      <path
-        d="M 55 130 Q 85 112 148 108"
-        fill="none"
-        stroke="#1d4ed8"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
+      <path d="M 52 122 L 158 98 L 158 237 L 46 237 Z" fill="#1e40af" />
+      {/* Cab roof curve */}
+      <path d="M 52 122 Q 85 105 158 98" fill="none" stroke="#1d4ed8" strokeWidth="6" strokeLinecap="round" />
       {/* Windshield */}
-      <path
-        d="M 72 148 L 145 126 L 145 222 L 72 222 Z"
-        fill="#60a5fa"
-        opacity="0.55"
-      />
-      <path
-        d="M 72 148 L 145 126 L 145 222 L 72 222 Z"
-        fill="none"
-        stroke="#93c5fd"
-        strokeWidth="1.5"
-        opacity="0.4"
-      />
+      <path d="M 68 140 L 153 118 L 153 227 L 68 227 Z" fill="#60a5fa" opacity="0.5" />
+      <path d="M 68 140 L 153 118 L 153 227 L 68 227 Z" fill="none" stroke="#93c5fd" strokeWidth="1.5" opacity="0.35" />
+      {/* Windshield glare */}
+      <path d="M 72 142 L 140 122 L 140 148 L 72 162 Z" fill="rgba(255,255,255,0.06)" />
       {/* Cab door line */}
-      <line x1="112" y1="148" x2="112" y2="233" stroke="#1e3a8a" strokeWidth="1.5" />
+      <line x1="108" y1="142" x2="108" y2="237" stroke="#1e3a8a" strokeWidth="1.5" />
       {/* Door handle */}
-      <rect x="116" y="186" width="18" height="4" rx="2" fill="#93c5fd" opacity="0.6" />
+      <rect x="112" y="182" width="20" height="4.5" rx="2.25" fill="#93c5fd" opacity="0.5" />
       {/* Side mirror */}
-      <rect x="38" y="152" width="18" height="26" rx="4" fill="#334155" />
-      <rect x="34" y="157" width="8" height="16" rx="2" fill="#475569" />
+      <rect x="36" y="146" width="19" height="26" rx="4" fill="#334155" />
+      <rect x="31" y="151" width="8" height="16" rx="2" fill="#475569" />
 
       {/* ── FRONT FACE ── */}
-      <rect x="44" y="140" width="18" height="88" rx="4 0 0 4" fill="#1e3a8a" />
+      <rect x="40" y="135" width="20" height="97" rx="4 0 0 4" fill="#1e3a8a" />
       {/* Headlight */}
-      <rect x="46" y="152" width="14" height="20" rx="3" fill="#fef9c3" />
-      <rect x="46" y="152" width="14" height="10" rx="3" fill="white" opacity="0.5" />
-      {/* Running light strip */}
-      <rect x="46" y="148" width="14" height="3" rx="1.5" fill="#fed7aa" opacity="0.7" />
+      <rect x="41" y="148" width="17" height="22" rx="3" fill="#fef9c3" />
+      <rect x="41" y="148" width="17" height="10" rx="3" fill="white" opacity="0.55" />
+      {/* DRL strip */}
+      <rect x="41" y="145" width="17" height="3.5" rx="1.75" fill="#fed7aa" opacity="0.75" />
       {/* Grille */}
-      {[188, 195, 202, 209, 216, 223].map((y) => (
-        <rect key={y} x="47" y={y} width="12" height="2" rx="1" fill="#1d4ed8" />
+      {[190, 198, 206, 214, 222, 230].map((y) => (
+        <rect key={y} x="42" y={y} width="15" height="2" rx="1" fill="#1d4ed8" />
       ))}
-      {/* Front bumper */}
-      <rect x="42" y="228" width="22" height="10" rx="3" fill="#334155" />
+      {/* Bumper */}
+      <rect x="38" y="232" width="24" height="12" rx="3" fill="#334155" />
 
-      {/* ── REAR LIGHT ── */}
-      <rect x="454" y="170" width="10" height="24" rx="3" fill="#fca5a5" />
-      <rect x="454" y="165" width="10" height="6" rx="2" fill="#fb923c" opacity="0.8" />
+      {/* Rear light */}
+      <rect x="482" y="170" width="11" height="26" rx="3" fill="#fca5a5" />
+      <rect x="482" y="165" width="11" height="7" rx="2" fill="#fb923c" opacity="0.8" />
 
       {/* ── WHEELS ── */}
-      {/* Front wheel */}
-      <circle cx="100" cy="252" r="28" fill="#1e293b" />
-      <circle cx="100" cy="252" r="17" fill="#334155" />
-      <circle cx="100" cy="252" r="7" fill="#64748b" />
-      <circle cx="100" cy="238" r="2.5" fill="#94a3b8" />
-      <circle cx="100" cy="266" r="2.5" fill="#94a3b8" />
-      <circle cx="86" cy="245" r="2.5" fill="#94a3b8" />
-      <circle cx="114" cy="245" r="2.5" fill="#94a3b8" />
-      <circle cx="86" cy="259" r="2.5" fill="#94a3b8" />
-      <circle cx="114" cy="259" r="2.5" fill="#94a3b8" />
+      {/* Front */}
+      <circle cx="96" cy="260" r="30" fill="#1e293b" />
+      <circle cx="96" cy="260" r="19" fill="#334155" />
+      <circle cx="96" cy="260" r="8" fill="#64748b" />
+      {[0, 60, 120, 180, 240, 300].map((deg) => (
+        <circle key={deg}
+          cx={96 + 14 * Math.cos((deg * Math.PI) / 180)}
+          cy={260 + 14 * Math.sin((deg * Math.PI) / 180)}
+          r="2.5" fill="#94a3b8" />
+      ))}
 
-      {/* Rear axle connector */}
-      <rect x="365" y="232" width="58" height="9" rx="4" fill="#1e293b" />
+      {/* Axle */}
+      <rect x="372" y="240" width="62" height="10" rx="5" fill="#1e293b" />
 
-      {/* Rear wheel 1 */}
-      <circle cx="375" cy="252" r="28" fill="#1e293b" />
-      <circle cx="375" cy="252" r="17" fill="#334155" />
-      <circle cx="375" cy="252" r="7" fill="#64748b" />
-      <circle cx="375" cy="238" r="2.5" fill="#94a3b8" />
-      <circle cx="375" cy="266" r="2.5" fill="#94a3b8" />
-      <circle cx="361" cy="245" r="2.5" fill="#94a3b8" />
-      <circle cx="389" cy="245" r="2.5" fill="#94a3b8" />
+      {/* Rear L */}
+      <circle cx="382" cy="260" r="30" fill="#1e293b" />
+      <circle cx="382" cy="260" r="19" fill="#334155" />
+      <circle cx="382" cy="260" r="8" fill="#64748b" />
+      {[0, 60, 120, 180, 240, 300].map((deg) => (
+        <circle key={deg}
+          cx={382 + 14 * Math.cos((deg * Math.PI) / 180)}
+          cy={260 + 14 * Math.sin((deg * Math.PI) / 180)}
+          r="2.5" fill="#94a3b8" />
+      ))}
 
-      {/* Rear wheel 2 */}
-      <circle cx="420" cy="252" r="28" fill="#1e293b" />
-      <circle cx="420" cy="252" r="17" fill="#334155" />
-      <circle cx="420" cy="252" r="7" fill="#64748b" />
+      {/* Rear R */}
+      <circle cx="432" cy="260" r="30" fill="#1e293b" />
+      <circle cx="432" cy="260" r="19" fill="#334155" />
+      <circle cx="432" cy="260" r="8" fill="#64748b" />
 
-      {/* ── CHASSIS / UNDERCARRIAGE ── */}
-      <rect x="44" y="233" width="416" height="12" rx="2" fill="#1e293b" />
+      {/* Chassis */}
+      <rect x="38" y="237" width="458" height="14" rx="3" fill="#1e293b" />
 
-      {/* ── FLOATING BOXES (right side) ── */}
-      <rect x="458" y="105" width="30" height="28" rx="4" fill="#f97316" opacity="0.9" />
-      <line x1="473" y1="105" x2="473" y2="133" stroke="#ea580c" strokeWidth="1.5" />
-      <line x1="458" y1="119" x2="488" y2="119" stroke="#ea580c" strokeWidth="1.5" />
+      {/* ── FLOATING BOXES ── */}
+      {/* Box 1 orange */}
+      <rect x="496" y="100" width="34" height="31" rx="4" fill="#f97316" opacity="0.95" />
+      <line x1="513" y1="100" x2="513" y2="131" stroke="#ea580c" strokeWidth="1.5" />
+      <line x1="496" y1="115" x2="530" y2="115" stroke="#ea580c" strokeWidth="1.5" />
+      <text x="500" y="127" fill="rgba(255,255,255,0.5)" fontFamily="sans-serif" fontSize="8">FRÁGIL</text>
 
-      <rect x="462" y="141" width="24" height="24" rx="4" fill="#3b82f6" opacity="0.85" />
-      <line x1="474" y1="141" x2="474" y2="165" stroke="#2563eb" strokeWidth="1.5" />
-      <line x1="462" y1="153" x2="486" y2="153" stroke="#2563eb" strokeWidth="1.5" />
+      {/* Box 2 blue */}
+      <rect x="499" y="140" width="27" height="26" rx="4" fill="#2563eb" opacity="0.85" />
+      <line x1="512" y1="140" x2="512" y2="166" stroke="#1d4ed8" strokeWidth="1.5" />
+      <line x1="499" y1="153" x2="526" y2="153" stroke="#1d4ed8" strokeWidth="1.5" />
 
-      <rect x="460" y="173" width="20" height="18" rx="3" fill="#f97316" opacity="0.7" />
+      {/* Box 3 small orange */}
+      <rect x="502" y="175" width="20" height="18" rx="3" fill="#f97316" opacity="0.65" />
 
-      {/* Ground line */}
-      <rect x="40" y="264" width="430" height="6" rx="3" fill="#1e293b" opacity="0.5" />
+      {/* ── Defs ── */}
+      <defs>
+        <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="white" stopOpacity="0.06" />
+          <stop offset="100%" stopColor="black" stopOpacity="0.08" />
+        </linearGradient>
+        <linearGradient id="sideRefl" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="white" stopOpacity="0.08" />
+          <stop offset="100%" stopColor="white" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient id="diamondGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#fb923c" />
+          <stop offset="100%" stopColor="#f59e0b" />
+        </linearGradient>
+      </defs>
     </svg>
   );
 }
