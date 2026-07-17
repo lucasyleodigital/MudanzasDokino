@@ -17,39 +17,42 @@ export default function Hero() {
     <section className="relative min-h-[94vh] overflow-hidden flex flex-col aurora-bg noise-overlay">
 
       {/* ── Particle field ─────────────────────────────────── */}
-      <ParticleField className="opacity-70" />
+      <ParticleField className="opacity-100" />
 
       {/* ── Scan line ──────────────────────────────────────── */}
       <div className="scan-line" />
 
       {/* ── Animated blobs ─────────────────────────────────── */}
       <div
-        className="pointer-events-none absolute -bottom-40 -left-40 h-[700px] w-[700px] rounded-full"
+        className="pointer-events-none absolute -bottom-40 -left-40 h-[800px] w-[800px] rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(249,115,22,0.22) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(249,115,22,0.45) 0%, rgba(249,115,22,0.15) 40%, transparent 70%)",
           animation: "blob-drift 14s ease-in-out infinite",
-          filter: "blur(1px)",
+          filter: "blur(40px)",
         }}
       />
       <div
-        className="pointer-events-none absolute -right-20 -top-20 h-[600px] w-[600px] rounded-full"
+        className="pointer-events-none absolute -right-20 -top-20 h-[700px] w-[700px] rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(99,102,241,0.25) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(99,102,241,0.45) 0%, rgba(99,102,241,0.15) 40%, transparent 70%)",
           animation: "blob-drift-alt 10s ease-in-out infinite",
+          filter: "blur(40px)",
         }}
       />
       <div
-        className="pointer-events-none absolute bottom-0 right-[20%] h-[400px] w-[400px] rounded-full"
+        className="pointer-events-none absolute bottom-0 right-[20%] h-[500px] w-[500px] rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(168,85,247,0.15) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(168,85,247,0.35) 0%, rgba(168,85,247,0.1) 40%, transparent 70%)",
           animation: "blob-drift 18s ease-in-out infinite 4s",
+          filter: "blur(50px)",
         }}
       />
       <div
-        className="pointer-events-none absolute top-[30%] left-[35%] h-[300px] w-[300px] rounded-full"
+        className="pointer-events-none absolute top-[30%] left-[35%] h-[350px] w-[350px] rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(6,182,212,0.1) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(6,182,212,0.22) 0%, rgba(6,182,212,0.08) 40%, transparent 70%)",
           animation: "blob-drift-alt 12s ease-in-out infinite 2s",
+          filter: "blur(35px)",
         }}
       />
 

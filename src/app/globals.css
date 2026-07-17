@@ -272,9 +272,10 @@ h1, h2, h3, h4 {
   position: absolute;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(249,115,22,0.6) 40%, rgba(249,115,22,0.9) 50%, rgba(249,115,22,0.6) 60%, transparent 100%);
-  animation: scan-sweep 6s cubic-bezier(0.4,0,0.6,1) infinite 1s;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(249,115,22,0.4) 20%, rgba(249,115,22,1) 45%, rgba(255,255,255,0.9) 50%, rgba(249,115,22,1) 55%, rgba(249,115,22,0.4) 80%, transparent 100%);
+  box-shadow: 0 0 12px 2px rgba(249,115,22,0.6), 0 0 30px 4px rgba(249,115,22,0.3);
+  animation: scan-sweep 5s cubic-bezier(0.4,0,0.6,1) infinite 0.5s;
   pointer-events: none;
   z-index: 2;
 }
