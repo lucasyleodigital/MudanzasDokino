@@ -6,10 +6,12 @@ export default function TiltCard({
   children,
   className = "",
   intensity = 10,
+  glowColor = "249,115,22",
 }: {
   children: React.ReactNode;
   className?: string;
   intensity?: number;
+  glowColor?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -21,7 +23,7 @@ export default function TiltCard({
     const y = (e.clientY - r.top) / r.height - 0.5;
     el.style.transition = "box-shadow 0.2s ease";
     el.style.transform = `perspective(700px) rotateY(${x * intensity}deg) rotateX(${-y * intensity}deg) translateZ(8px)`;
-    el.style.boxShadow = `${-x * 16}px ${y * 16}px 40px rgba(249,115,22,0.15)`;
+    el.style.boxShadow = `${-x * 18}px ${y * 18}px 50px rgba(${glowColor},0.22)`;
   }
 
   function onLeave() {

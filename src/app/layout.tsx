@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CookieConsent from "@/components/CookieConsent";
 import JsonLd from "@/components/JsonLd";
+import CursorGlow from "@/components/CursorGlow";
 import { SITE } from "@/lib/constants";
 
 const manrope = Manrope({
@@ -47,6 +48,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <CursorGlow />
         <WhatsAppButton />
         <CookieConsent />
       </body>

@@ -145,22 +145,31 @@ export default function HomePage() {
       <Hero />
 
       {/* ── SERVICIOS ─────────────────────────────────────── */}
-      <section className="bg-paper py-24">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative overflow-hidden bg-[#060d1e] py-28 noise-overlay">
+        {/* Background blobs */}
+        <div className="pointer-events-none absolute -top-40 right-0 h-[500px] w-[500px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%)" }} />
+        <div className="pointer-events-none absolute bottom-0 left-10 h-[400px] w-[400px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%)" }} />
+        {/* Dot grid */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.03]"
+          style={{ backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+
+        <div className="relative mx-auto max-w-7xl px-6">
           <Reveal>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="section-label text-orange-500">Lo que hacemos</p>
-                <h2 className="mt-3 font-heading text-4xl font-extrabold text-ink md:text-5xl">
+                <p className="section-label text-orange-400">Lo que hacemos</p>
+                <h2 className="mt-3 font-heading text-4xl font-extrabold text-white md:text-5xl">
                   Nuestros servicios
                 </h2>
-                <p className="mt-3 max-w-xl text-lg text-ink-muted">
+                <p className="mt-3 max-w-xl text-lg text-slate-400">
                   Gestionamos el proceso completo. Tú solo decides cuándo.
                 </p>
               </div>
               <Link
                 href="/servicios/"
-                className="shrink-0 flex items-center gap-1.5 text-sm font-bold text-orange-500 transition-colors hover:text-orange-600"
+                className="shrink-0 flex items-center gap-1.5 text-sm font-bold text-orange-400 transition-colors hover:text-orange-300"
               >
                 Ver todos
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -172,8 +181,8 @@ export default function HomePage() {
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((service, i) => (
-              <Reveal key={service.slug} delayMs={i * 70}>
-                <ServiceCard {...service} />
+              <Reveal key={service.slug} delayMs={i * 80}>
+                <ServiceCard {...service} variant="dark" />
               </Reveal>
             ))}
           </div>
