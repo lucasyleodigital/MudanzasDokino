@@ -12,12 +12,17 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-500 font-heading text-sm font-extrabold text-white shadow-sm">
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0d2b5e] font-heading text-sm font-extrabold shadow-sm" style={{ color: "#FFE000" }}>
             D
           </span>
-          <span className="font-heading text-base font-extrabold tracking-tight text-ink">
-            Mudanzas Dokino
-          </span>
+          <div className="flex flex-col leading-none">
+            <span className="font-heading text-base font-extrabold tracking-tight text-ink">
+              Dokino
+            </span>
+            <span className="text-[10px] font-medium tracking-wide text-ink-muted">
+              Transportes y mudanzas
+            </span>
+          </div>
         </Link>
 
         {/* Desktop nav */}

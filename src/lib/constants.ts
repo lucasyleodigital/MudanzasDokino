@@ -28,30 +28,56 @@ export const SERVICES = [
     name: "Mudanzas particulares",
     short: "Pisos y casas, con o sin embalaje, a cualquier punto del país.",
     icon: "particulares",
+    color: "orange",
   },
   {
     slug: "empresas",
     name: "Mudanzas de empresas y oficinas",
     short: "Traslados de oficina planificados para no parar la actividad.",
     icon: "empresas",
+    color: "blue",
   },
   {
     slug: "guardamuebles",
     name: "Guardamuebles",
     short: "Almacenaje seguro mientras dura tu mudanza o reforma.",
     icon: "guardamuebles",
+    color: "violet",
   },
   {
     slug: "plataforma-elevadora",
     name: "Plataforma elevadora",
     short: "Para pisos altos sin ascensor o accesos complicados.",
     icon: "plataforma-elevadora",
+    color: "amber",
   },
   {
     slug: "larga-distancia",
     name: "Mudanzas de larga distancia",
     short: "Cobertura nacional con la misma atención de principio a fin.",
     icon: "larga-distancia",
+    color: "emerald",
+  },
+] as const;
+
+export const PARCEL_SERVICES = [
+  {
+    name: "Paquetería particular",
+    short: "Envío de paquetes y objetos sueltos por toda España.",
+    icon: "paqueteria",
+    color: "orange",
+  },
+  {
+    name: "Transporte de mercancías",
+    short: "Para empresas que mueven mercancía de forma puntual o recurrente.",
+    icon: "transporte",
+    color: "blue",
+  },
+  {
+    name: "Objetos especiales y frágiles",
+    short: "Cuadros, antigüedades, electrónica y maquinaria con embalaje a medida.",
+    icon: "guardamuebles",
+    color: "violet",
   },
 ] as const;
 
