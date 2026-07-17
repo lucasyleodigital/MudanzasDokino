@@ -343,6 +343,29 @@ h1, h2, h3, h4 {
   animation: grid-pulse 8s ease-in-out infinite;
 }
 
+/* ── Hero illustration animations ────────────────────────── */
+@keyframes spin-wheel {
+  to { transform: rotate(360deg); }
+}
+.svg-wheel-spokes {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spin-wheel 4.5s linear infinite;
+}
+@keyframes float-box-anim {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-18px); }
+}
+.float-box-1 { transform-box: fill-box; transform-origin: center; animation: float-box-anim 3.4s ease-in-out infinite; }
+.float-box-2 { transform-box: fill-box; transform-origin: center; animation: float-box-anim 4.1s ease-in-out infinite 0.6s; }
+.float-box-3 { transform-box: fill-box; transform-origin: center; animation: float-box-anim 3.8s ease-in-out infinite 1.3s; }
+.float-box-4 { transform-box: fill-box; transform-origin: center; animation: float-box-anim 4.6s ease-in-out infinite 0.2s; }
+@keyframes headlight-pulse {
+  0%, 100% { opacity: 0.7; }
+  50%       { opacity: 1; }
+}
+.headlight-glow { animation: headlight-pulse 2.5s ease-in-out infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
