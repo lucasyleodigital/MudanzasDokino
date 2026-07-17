@@ -58,11 +58,11 @@ const CONTACT_CARDS = [
         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    label: "Dirección fiscal",
-    value: SITE.fiscalAddress,
+    label: "Zona de cobertura",
+    value: "Barcelona, Cataluña y toda España",
     color: "text-violet-400",
     bg: "bg-violet-500/10 border-violet-500/30",
-    href: null,
+    href: "/zona-de-cobertura/",
     external: false,
   },
 ];

@@ -77,7 +77,6 @@ export default function Footer() {
                 </li>
               )}
               <li className="text-sm text-slate-400">{SITE.availability}</li>
-              <li className="text-sm text-slate-400">{SITE.fiscalAddress}</li>
             </ul>
           </div>
 
@@ -127,8 +126,9 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/8 px-5 py-5">
         <p className="mx-auto max-w-6xl text-xs text-slate-600">
-          © {new Date().getFullYear()} {SITE.legalName} · CIF {SITE.cif} ·{" "}
-          {SITE.fiscalAddress} · Web por{" "}
+          © {new Date().getFullYear()} Mudanzas Dokino ·{" "}
+          <Link href="/aviso-legal/" className="hover:text-slate-400 transition-colors">Aviso legal</Link>
+          {" "}· Web por{" "}
           <span className="text-slate-500">Lucas y Leo Digital</span>
         </p>
       </div>

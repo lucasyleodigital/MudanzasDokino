@@ -10,14 +10,8 @@ export default function JsonLd() {
     areaServed: "ES",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Calle Sigüenza, 9",
-      postalCode: "08032",
       addressLocality: "Barcelona",
       addressCountry: "ES",
-    },
-    founder: {
-      "@type": "Person",
-      name: SITE.legalName,
     },
   };
 
