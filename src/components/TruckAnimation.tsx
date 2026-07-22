@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import type { Mesh } from "three";
 
 export default function TruckAnimation({ className }: { className?: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -54,7 +55,7 @@ export default function TruckAnimation({ className }: { className?: string }) {
         [-1.2, -0.8, -1], [1.2, -0.8, -1],
         [2.4, -0.8, 1], [2.4, -0.8, -1],
       ];
-      const wheels: THREE.Mesh[] = [];
+      const wheels: Mesh[] = [];
       wheelPositions.forEach(([x, y, z]) => {
         const wheel = new THREE.Mesh(wheelGeo, wheelMat);
         wheel.rotation.x = Math.PI / 2;
@@ -67,7 +68,7 @@ export default function TruckAnimation({ className }: { className?: string }) {
 
       const boxGeo = new THREE.BoxGeometry(0.5, 0.5, 0.5);
       const boxMat = new THREE.MeshPhongMaterial({ color: 0xf97316 });
-      const boxes: { mesh: THREE.Mesh; offset: number }[] = [];
+      const boxes: { mesh: Mesh; offset: number }[] = [];
       for (let i = 0; i < 5; i++) {
         const box = new THREE.Mesh(boxGeo, boxMat);
         box.position.set(
@@ -111,7 +112,7 @@ export default function TruckAnimation({ className }: { className?: string }) {
         cancelAnimationFrame(animFrameId);
         window.removeEventListener("resize", handleResize);
         renderer.dispose();
-        if (container.contains(renderer.domElement)) {
+        if (container?.contains(renderer.domElement)) {
           container.removeChild(renderer.domElement);
         }
       };
