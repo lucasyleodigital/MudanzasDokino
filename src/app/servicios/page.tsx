@@ -60,7 +60,8 @@ const SERVICES = [
     href: "/servicios/plataforma-elevadora/",
     title: "Embalaje Profesional",
     desc: "Materiales eco-responsables. Embalajes a medida para obras de arte, equipo frágil y mobiliario de alta gama.",
-    tags: ["Eco-Friendly", "Premium"],
+    tags: ["Eco-Friendly", "Premium Kraft"],
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDphYamJRnEYlb57TPezYTT-I9Ux1tVJFIhWltKF-SPs_T_lVVKf9zihEtuK9n7bSNQuaT2yL-wQH7XbVQuaHYX7RttLHtb_ejo9eTTQqggvXns41GZAlGJhXydDU66kVlKB_v_mmCRu-R575TdF3gWaB9iFUkpwtJt62POOg3klQNKBSnJmOpYEi6NmZPjQI9-nP0ryClpyJqC7o_LVS_sZ2KNPo6tPaGw0uBE_MctCX8_Nf2SgkJAvSIhN40h29WcTw_nH9bO8tI",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/>
@@ -188,6 +189,19 @@ export default function ServiciosPage() {
                         {tag}
                       </span>
                     ))}
+                  </div>
+                )}
+
+                {/* Photo (Embalaje card) */}
+                {"image" in service && service.image && (
+                  <div className="group/img mt-6 w-full overflow-hidden rounded-lg border border-white/[0.07] relative" style={{ aspectRatio: "16/9" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={service.image}
+                      alt="Materiales de embalaje premium"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover/img:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#060d1e]/80 to-transparent opacity-60" />
                   </div>
                 )}
 

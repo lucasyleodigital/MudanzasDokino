@@ -172,13 +172,12 @@ export default function HomePage() {
                 href="/servicios/particulares/"
                 className="glass-card group flex h-full flex-col justify-end overflow-hidden rounded-2xl p-8 relative block"
               >
-                <div className="pointer-events-none absolute inset-0 opacity-[0.05] flex items-center justify-end pr-8">
-                  <svg width="280" height="180" viewBox="0 0 24 16" fill="currentColor" className="text-orange-400" aria-hidden="true">
-                    <path d="M1 2h15v11H1z M16 5h4l3 3v5h-7V5z" />
-                    <circle cx="5.5" cy="14.5" r="1.5" />
-                    <circle cx="18.5" cy="14.5" r="1.5" />
-                  </svg>
-                </div>
+                {/* Warehouse/logistics photo background */}
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-20 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                  style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAlqTqjiNDfd5CAUmRihH0Y4rvUYmGHcJGW9Y3IoUfPyYb9JRhf1d1cTVZiNpFQU7ZUMzYpjnXyYRFcGeZPoGZ6w6HWSU9M5CLDW2iaXh0C6ZfOadG74JP03L_P2lwjYiPqqpbGlEnJ_Fz5qKRPdNhUAcNSAHPL-f6do1RzgkGjSTaROVuibuRxX-ZRSU7CBMn0UJJjhoJcyhqg4sne1F5Dc3HP5olGue2O1MVonMg9WoGIzHkYDj6a67VwWYlTXAJiE6-dkcIMpU4')" }}
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#060d1e]/90 via-[#060d1e]/40 to-transparent" />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-orange-500/0 via-transparent to-orange-500/8 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
                 <div className="relative z-10">
                   <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-500 shadow-lg shadow-orange-500/25">
@@ -308,23 +307,23 @@ export default function HomePage() {
             {/* Visual */}
             <Reveal delayMs={150} className="w-full lg:w-1/2">
               <div className="glass-card relative h-[300px] overflow-hidden rounded-2xl lg:h-[400px]">
+                {/* Barcelona map photo */}
                 <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px)", backgroundSize: "32px 32px" }}
+                  className="absolute inset-0 opacity-60 grayscale transition-all duration-700 hover:grayscale-0 bg-cover bg-center"
+                  style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOU4VgG2GEej4v7JCmiG03nF5J2hCEnKUrJVC90v1QvWKluM3rre6KnPoqSXcIMS56nAU4ctJC0DkpBfHN60lqH8S9VF2nMDvhbaT4r4lDYign3cI-IuWnz9N0H51xLRyEgFLVnFXLOT6XLND0jJtvw_uPyCeN1TL1n0QRlrAm5EctFLBJWWz0tlQhDEWx4m1NBf2TQu6cKC29x9ySN0x70R_HHETWhgXH-uOSCFJentNKORiTjxoFKwLSfcCzHEnrsfs0Mlvx9lA')" }}
                 />
+                <div className="absolute inset-0 bg-[#1f2a3c]/40" />
+                {/* GPS ping dot */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative">
-                    <div className="absolute -inset-0 h-16 w-16 animate-ping rounded-full bg-orange-500 opacity-20" />
-                    <div className="relative flex h-16 w-16 items-center justify-center rounded-full border-2 border-white/20 bg-orange-500 shadow-xl shadow-orange-500/40">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <div className="absolute -inset-0 h-12 w-12 animate-ping rounded-full bg-orange-500 opacity-25" />
+                    <div className="relative flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/20 bg-orange-500 shadow-lg shadow-orange-500/40">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/>
                         <circle cx="5.5" cy="18.5" r="2.5" fill="white" stroke="none"/>
                         <circle cx="18.5" cy="18.5" r="2.5" fill="white" stroke="none"/>
                       </svg>
                     </div>
-                    <div className="pointer-events-none absolute -inset-8 rounded-full border border-orange-500/20" />
-                    <div className="pointer-events-none absolute -inset-16 rounded-full border border-orange-500/10" />
-                    <div className="pointer-events-none absolute -inset-24 rounded-full border border-orange-500/5" />
                   </div>
                 </div>
                 <div className="glass-card absolute bottom-5 left-5 rounded-lg px-3 py-2">

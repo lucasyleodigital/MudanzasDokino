@@ -1,24 +1,17 @@
 import Link from "next/link";
-import { NAV_LINKS, SITE, whatsappHref } from "@/lib/constants";
+import { SITE, whatsappHref } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0f172a]">
+    <footer className="border-t border-white/[0.06] bg-[#040e1f]">
       <div className="mx-auto max-w-6xl px-5 py-14">
-        <div className="grid gap-10 md:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+
           {/* Brand */}
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2.5">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-500 font-heading text-sm font-extrabold text-white">
-                D
-              </span>
-              <span className="font-heading text-base font-extrabold text-white">
-                Mudanzas Dokino
-              </span>
-            </div>
-            <p className="mt-4 text-sm leading-relaxed text-slate-400">
-              Mudanzas particulares y de empresa en {SITE.serviceAreaHeadline}. Equipo
-              propio, sin subcontratas.
+          <div className="sm:col-span-2 lg:col-span-1">
+            <span className="font-heading text-2xl font-extrabold text-orange-400">DOKINO</span>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
+              Mudanzas premium y logística urbana en el área metropolitana de {SITE.serviceAreaHeadline}.
             </p>
             <a
               href={whatsappHref("Hola, quiero información sobre una mudanza.")}
@@ -33,18 +26,19 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Nav */}
+          {/* Servicios */}
           <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-500">
-              Navegación
-            </p>
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Servicios</p>
             <ul className="mt-4 space-y-2.5">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-slate-400 transition-colors hover:text-white"
-                  >
+              {[
+                { href: "/servicios/particulares/", label: "Particulares" },
+                { href: "/servicios/empresas/", label: "Oficinas" },
+                { href: "/servicios/plataforma-elevadora/", label: "Embalaje" },
+                { href: "/servicios/plataforma-elevadora/", label: "Elevadores" },
+                { href: "/servicios/guardamuebles/", label: "Guardamuebles" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className="text-sm text-slate-400 transition-colors hover:text-white">
                     {link.label}
                   </Link>
                 </li>
@@ -52,85 +46,90 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Compañía */}
           <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-500">
-              Contacto
-            </p>
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Compañía</p>
             <ul className="mt-4 space-y-2.5">
-              <li>
-                <a
-                  href={`mailto:${SITE.contactEmail}`}
-                  className="text-sm text-slate-400 transition-colors hover:text-white"
-                >
-                  {SITE.contactEmail}
-                </a>
-              </li>
+              {[
+                { href: "/sobre-nosotros/", label: "Sobre nosotros" },
+                { href: "/zona-de-cobertura/", label: "Zona de cobertura" },
+                { href: "/blog/", label: "Blog" },
+                { href: "/preguntas-frecuentes/", label: "Preguntas frecuentes" },
+                { href: "/contacto/", label: "Contacto" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-slate-400 transition-colors hover:text-white">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contacto */}
+          <div>
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Contacto</p>
+            <ul className="mt-4 space-y-3">
               {SITE.phoneDisplay !== "PENDIENTE" && (
                 <li>
                   <a
                     href={`tel:${SITE.phoneDisplay}`}
-                    className="text-sm text-slate-400 transition-colors hover:text-white"
+                    className="flex items-center gap-2 text-sm text-slate-400 transition-colors hover:text-white"
                   >
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="text-orange-400 shrink-0" aria-hidden="true">
+                      <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57A1 1 0 0 1 21 18.5V22a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                     {SITE.phoneDisplay}
                   </a>
                 </li>
               )}
-              <li className="text-sm text-slate-400">{SITE.availability}</li>
+              <li>
+                <a
+                  href={`mailto:${SITE.contactEmail}`}
+                  className="flex items-center gap-2 text-sm text-slate-400 transition-colors hover:text-white"
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="text-orange-400 shrink-0" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"/>
+                    <path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                  </svg>
+                  {SITE.contactEmail}
+                </a>
+              </li>
+              <li>
+                <span className="flex items-center gap-2 text-sm text-slate-400">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="text-orange-400 shrink-0" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"/>
+                    <circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="1.8"/>
+                  </svg>
+                  Poblenou, Barcelona
+                </span>
+              </li>
+              <li className="text-sm text-slate-500">{SITE.availability}</li>
             </ul>
           </div>
 
-          {/* Legal */}
-          <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-500">
-              Legal
-            </p>
-            <ul className="mt-4 space-y-2.5">
-              <li>
-                <Link
-                  href="/aviso-legal/"
-                  className="text-sm text-slate-400 transition-colors hover:text-white"
-                >
-                  Aviso legal
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/politica-de-privacidad/"
-                  className="text-sm text-slate-400 transition-colors hover:text-white"
-                >
-                  Política de privacidad
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/politica-de-cookies/"
-                  className="text-sm text-slate-400 transition-colors hover:text-white"
-                >
-                  Política de cookies
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/presupuesto/"
-                  className="text-sm text-slate-400 transition-colors hover:text-white"
-                >
-                  Pedir presupuesto
-                </Link>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/8 px-5 py-5">
-        <p className="mx-auto max-w-6xl text-xs text-slate-600">
-          © {new Date().getFullYear()} Mudanzas Dokino ·{" "}
-          <Link href="/aviso-legal/" className="hover:text-slate-400 transition-colors">Aviso legal</Link>
-          {" "}· Web por{" "}
-          <span className="text-slate-500">Lucas y Leo Digital</span>
-        </p>
+      <div className="border-t border-white/[0.05] px-5 py-5">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <p className="text-xs text-slate-600">
+            © {new Date().getFullYear()} Mudanzas Dokino · Logística de precisión en Barcelona
+          </p>
+          <div className="flex flex-wrap gap-4">
+            {[
+              { href: "/politica-de-privacidad/", label: "Privacidad" },
+              { href: "/aviso-legal/", label: "Aviso legal" },
+              { href: "/politica-de-cookies/", label: "Cookies" },
+              { href: "/presupuesto/", label: "Pedir presupuesto" },
+            ].map((link) => (
+              <Link key={link.href} href={link.href} className="text-xs text-slate-600 transition-colors hover:text-slate-400">
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </footer>
   );
