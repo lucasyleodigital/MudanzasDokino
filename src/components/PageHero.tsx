@@ -21,7 +21,7 @@ export default function PageHero({ label, title, highlight, subtitle, children, 
       <div
         className="pointer-events-none absolute -right-24 -top-24 h-[600px] w-[600px] rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(99,102,241,0.42) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(249,115,22,0.10) 0%, transparent 70%)",
           filter: "blur(65px)",
           animation: "blob-drift-alt 12s ease-in-out infinite 1s",
         }}
@@ -29,8 +29,8 @@ export default function PageHero({ label, title, highlight, subtitle, children, 
       <div
         className="pointer-events-none absolute inset-0 grid-pulse"
         style={{
-          backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.45) 1px, transparent 1px)",
-          backgroundSize: "36px 36px",
+          backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
         }}
       />
       <div className="scan-line" />

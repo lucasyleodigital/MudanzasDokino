@@ -47,11 +47,11 @@ export default function PresupuestoTabs() {
             onClick={() => setActive(tab.id)}
             className={`flex flex-col items-start gap-2 rounded-xl border-2 p-4 text-left transition-all duration-200 ${
               active === tab.id
-                ? "border-orange-500 bg-orange-50 text-orange-600"
-                : "border-line bg-white text-ink-muted hover:border-orange-200 hover:bg-orange-50/50"
+                ? "border-orange-500 bg-orange-500/10 text-orange-400"
+                : "border-white/[0.08] bg-white/[0.03] text-slate-400 hover:border-orange-500/30 hover:bg-white/[0.06]"
             }`}
           >
-            <span className={active === tab.id ? "text-orange-500" : "text-ink-muted"}>
+            <span className={active === tab.id ? "text-orange-400" : "text-slate-500"}>
               {tab.icon}
             </span>
             <span className="font-heading text-sm font-bold leading-tight">{tab.label}</span>
@@ -61,7 +61,7 @@ export default function PresupuestoTabs() {
       </div>
 
       {/* Form */}
-      <div className="rounded-xl border border-line bg-paper-raised p-6 sm:p-8">
+      <div className="glass-card rounded-xl p-6 sm:p-8">
         {active === "mudanza" ? <QuoteForm /> : <ParcelForm />}
       </div>
     </div>

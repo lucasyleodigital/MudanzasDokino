@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { whatsappHref } from "@/lib/constants";
 import Counter from "@/components/Counter";
-import TruckAnimation from "@/components/TruckAnimation";
+import TruckIllustration from "@/components/TruckIllustration";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -139,9 +139,9 @@ export default function Hero() {
                 <div className="absolute inset-0 rounded-full border border-white/[0.06] bg-gradient-to-tr from-slate-900/80 to-transparent" />
                 {/* Inner pulse ring */}
                 <div className="absolute inset-4 rounded-full bg-orange-500/5 animate-pulse" />
-                {/* Three.js animation clipped to circle */}
+                {/* SVG truck illustration clipped to circle */}
                 <div className="absolute inset-0 overflow-hidden rounded-full">
-                  <TruckAnimation className="h-full w-full" />
+                  <TruckIllustration className="h-full w-full" />
                 </div>
                 {/* Spinning dashed ring */}
                 <div className="animate-wheel-border pointer-events-none absolute inset-0 rounded-full border-2 border-dashed border-orange-500/20" />

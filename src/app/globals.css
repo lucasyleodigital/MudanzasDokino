@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f8fafc;
-  --paper-raised: #ffffff;
-  --ink: #0f172a;
-  --ink-muted: #64748b;
-  --line: #e2e8f0;
+  /* Dark Stitch theme — all legacy tokens remapped */
+  --paper: #060d1e;
+  --paper-raised: #0f172a;
+  --ink: #f1f5f9;
+  --ink-muted: #94a3b8;
+  --line: rgba(255, 255, 255, 0.08);
 
-  --accent: #2563eb;
-  --accent-dark: #1d4ed8;
-  --accent-soft: #eff6ff;
+  --accent: #f97316;
+  --accent-dark: #ea580c;
+  --accent-soft: rgba(249, 115, 22, 0.1);
 
   --orange: #f97316;
   --orange-dark: #ea580c;
-  --orange-soft: #fff7ed;
+  --orange-soft: rgba(249, 115, 22, 0.08);
 
   --navy: #060d1e;
   --navy-mid: #0f172a;
@@ -21,7 +22,7 @@
   --navy-border: rgba(255, 255, 255, 0.07);
 
   --amber: #f59e0b;
-  --amber-soft: #fef3c7;
+  --amber-soft: rgba(245, 158, 11, 0.1);
 
   --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
@@ -67,8 +68,8 @@ h1, h2, h3, h4 {
 .input {
   width: 100%;
   border-radius: 0.5rem;
-  border: 1px solid var(--line);
-  background: var(--paper-raised);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
   padding: 0.65rem 0.9rem;
   font-size: 0.9rem;
   color: var(--ink);
@@ -76,8 +77,8 @@ h1, h2, h3, h4 {
 }
 .input:focus-visible {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
 }
 
 /* ── Scroll reveal ────────────────────────────────────────── */
