@@ -163,6 +163,29 @@ h1, h2, h3, h4 {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* ── Stitch glass-card ────────────────────────────────────── */
+.glass-card {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card:hover {
+  border-color: rgba(249, 115, 22, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Servicios circle spinner ─────────────────────────────── */
+@keyframes wheel-spin-border {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.animate-wheel-border {
+  animation: wheel-spin-border 8s linear infinite;
+}
+
 /* ── Shimmer loading bar ──────────────────────────────────── */
 @keyframes shimmer {
   from { background-position: -200% 0; }

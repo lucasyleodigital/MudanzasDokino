@@ -1,9 +1,8 @@
 import Hero from "@/components/Hero";
-import ServiceCard from "@/components/ServiceCard";
 import Reveal from "@/components/Reveal";
 import TiltCard from "@/components/TiltCard";
 import Link from "next/link";
-import { SERVICES, whatsappHref } from "@/lib/constants";
+import { whatsappHref } from "@/lib/constants";
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 
@@ -13,7 +12,7 @@ const STEPS = [
     title: "Nos cuentas tu mudanza",
     body: "Rellenas el formulario con origen, destino y fecha aproximada. También puedes escribirnos directamente por WhatsApp y te respondemos en minutos.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round"/>
       </svg>
     ),
@@ -23,7 +22,7 @@ const STEPS = [
     title: "Te enviamos presupuesto",
     body: "Revisamos accesos, plantas y volumen. Te respondemos con precio cerrado — sin letra pequeña, sin sorpresas el día de la mudanza.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round"/>
         <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"/>
       </svg>
@@ -34,7 +33,7 @@ const STEPS = [
     title: "Hacemos la mudanza",
     body: "Llega nuestro equipo con furgoneta propia y plataforma elevadora si el acceso lo requiere. Lo gestionamos todo de principio a fin.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round"/>
         <circle cx="5.5" cy="18.5" r="2.5" stroke="currentColor" strokeWidth="1.7"/>
         <circle cx="18.5" cy="18.5" r="2.5" stroke="currentColor" strokeWidth="1.7"/>
@@ -46,7 +45,7 @@ const STEPS = [
     title: "Seguimiento y cierre",
     body: "Confirmamos que todo ha llegado en perfecto estado. Resolvemos cualquier incidencia sin excusas — somos una empresa de personas, no de call centers.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"/>
         <path d="M22 4L12 14.01l-3-3" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
@@ -69,7 +68,7 @@ const TESTIMONIALS = [
     stars: 5,
     text: "Traslado de oficina de 15 puestos. Lo coordinaron todo para que no perdiéramos ni un día de trabajo. Llevaron muebles, servidores y equipo frágil sin ningún problema. Volveríamos a contratarlos.",
     initial: "C",
-    color: "from-blue-400 to-indigo-400",
+    color: "from-slate-400 to-slate-500",
   },
   {
     name: "Anna R.",
@@ -86,7 +85,7 @@ const FEATURES = [
     title: "Vehículo y equipo propio",
     body: "Nuestras furgonetas, nuestro equipo. No subcontratamos a terceros ni cedemos tu mudanza a otra empresa.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round"/>
         <circle cx="5.5" cy="18.5" r="2.5" stroke="currentColor" strokeWidth="1.7"/>
         <circle cx="18.5" cy="18.5" r="2.5" stroke="currentColor" strokeWidth="1.7"/>
@@ -97,7 +96,7 @@ const FEATURES = [
     title: "Plataforma elevadora",
     body: "Para pisos altos, accesos difíciles o muebles grandes sin ascensor. La traemos, la montamos, la usamos.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round"/>
       </svg>
     ),
@@ -106,7 +105,7 @@ const FEATURES = [
     title: "Seguro de transporte",
     body: "Tus pertenencias viajan aseguradas. Si algo se daña durante la mudanza, lo resolvemos sin excusas ni papeleo eterno.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round"/>
         <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
@@ -116,7 +115,7 @@ const FEATURES = [
     title: "Respuesta directa, sin call center",
     body: "Hablas con quien hace tu mudanza. Presupuesto personalizado, respuesta real, trato humano.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57A1 1 0 0 1 21 16.5v3.5A1 1 0 0 1 20 21 17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
@@ -144,54 +143,208 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* ── SERVICIOS ─────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[#060d1e] py-28 noise-overlay">
-        {/* Background blobs */}
-        <div className="pointer-events-none absolute -top-40 right-0 h-[500px] w-[500px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%)" }} />
-        <div className="pointer-events-none absolute bottom-0 left-10 h-[400px] w-[400px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%)" }} />
-        {/* Dot grid */}
-        <div className="pointer-events-none absolute inset-0 opacity-[0.03]"
-          style={{ backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+      {/* ── BENTO SERVICIOS ───────────────────────────────── */}
+      <section className="relative overflow-hidden bg-[#060d1e] py-28">
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px)", backgroundSize: "48px 48px" }}
+        />
+        <div
+          className="pointer-events-none absolute -top-40 right-0 h-[500px] w-[500px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%)" }}
+        />
 
-        <div className="relative mx-auto max-w-7xl px-6">
+        <div className="relative mx-auto max-w-6xl px-6">
           <Reveal>
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="section-label text-orange-400">Lo que hacemos</p>
-                <h2 className="mt-3 font-heading text-4xl font-extrabold text-white md:text-5xl">
-                  Nuestros servicios
-                </h2>
-                <p className="mt-3 max-w-xl text-lg text-slate-400">
-                  Gestionamos el proceso completo. Tú solo decides cuándo.
-                </p>
-              </div>
+            <div className="mb-16 text-center">
+              <p className="section-label justify-center text-orange-400">Lo que hacemos</p>
+              <h2 className="mt-4 font-heading text-4xl font-extrabold text-white md:text-5xl">Servicios Especializados</h2>
+              <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-orange-500" />
+            </div>
+          </Reveal>
+
+          {/* Bento grid */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-12 lg:[grid-auto-rows:240px]">
+
+            {/* Large card: Mudanzas de Hogar */}
+            <Reveal className="lg:col-span-8 lg:row-span-2 min-h-[300px]">
+              <Link
+                href="/servicios/particulares/"
+                className="glass-card group flex h-full flex-col justify-end overflow-hidden rounded-2xl p-8 relative block"
+              >
+                <div className="pointer-events-none absolute inset-0 opacity-[0.05] flex items-center justify-end pr-8">
+                  <svg width="280" height="180" viewBox="0 0 24 16" fill="currentColor" className="text-orange-400" aria-hidden="true">
+                    <path d="M1 2h15v11H1z M16 5h4l3 3v5h-7V5z" />
+                    <circle cx="5.5" cy="14.5" r="1.5" />
+                    <circle cx="18.5" cy="14.5" r="1.5" />
+                  </svg>
+                </div>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-orange-500/0 via-transparent to-orange-500/8 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+                <div className="relative z-10">
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-500 shadow-lg shadow-orange-500/25">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/>
+                      <circle cx="5.5" cy="18.5" r="2.5"/>
+                      <circle cx="18.5" cy="18.5" r="2.5"/>
+                    </svg>
+                  </div>
+                  <h3 className="font-heading text-2xl font-extrabold text-white lg:text-3xl">Mudanzas de Hogar</h3>
+                  <p className="mt-3 max-w-md text-sm text-slate-400 lg:text-base">
+                    Gestión integral de tu vivienda con embalaje especializado para objetos frágiles. Desmontaje y montaje de muebles por profesionales.
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-orange-400 transition-all group-hover:gap-4">
+                    Ver servicio
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+              </Link>
+            </Reveal>
+
+            {/* Oficinas */}
+            <Reveal delayMs={120} className="lg:col-span-4 min-h-[200px]">
+              <Link
+                href="/servicios/empresas/"
+                className="glass-card group flex h-full flex-col justify-between rounded-2xl p-8 block"
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-orange-500/20 bg-orange-500/10 text-orange-400">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <rect x="2" y="7" width="20" height="14" rx="2"/>
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    </svg>
+                  </div>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="text-slate-600 transition-colors group-hover:text-orange-400" aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H7M17 7v10" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-heading text-xl font-extrabold text-white">Oficinas</h3>
+                  <p className="mt-2 text-sm text-slate-400">Traslados corporativos rápidos para minimizar el tiempo de inactividad.</p>
+                </div>
+              </Link>
+            </Reveal>
+
+            {/* Guardamuebles */}
+            <Reveal delayMs={200} className="lg:col-span-4 min-h-[200px]">
+              <Link
+                href="/servicios/guardamuebles/"
+                className="glass-card group flex h-full flex-col justify-between rounded-2xl p-8 block"
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-orange-500/20 bg-orange-500/10 text-orange-400">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                      <path d="M3.29 7L12 12l8.71-5M12 22V12"/>
+                    </svg>
+                  </div>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="text-slate-600 transition-colors group-hover:text-orange-400" aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H7M17 7v10" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-heading text-xl font-extrabold text-white">Guardamuebles</h3>
+                  <p className="mt-2 text-sm text-slate-400">Espacios seguros, vigilados 24/7 y con control de humedad.</p>
+                </div>
+              </Link>
+            </Reveal>
+
+          </div>
+
+          <Reveal>
+            <div className="mt-8 text-center">
               <Link
                 href="/servicios/"
-                className="shrink-0 flex items-center gap-1.5 text-sm font-bold text-orange-400 transition-colors hover:text-orange-300"
+                className="inline-flex items-center gap-2 text-sm font-bold text-orange-400 transition-all hover:gap-4 hover:text-orange-300"
               >
-                Ver todos
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                Ver todos los servicios
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </Link>
             </div>
           </Reveal>
+        </div>
+      </section>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {SERVICES.map((service, i) => (
-              <Reveal key={service.slug} delayMs={i * 80}>
-                <ServiceCard {...service} variant="dark" />
+      {/* ── COBERTURA ─────────────────────────────────────── */}
+      <section className="relative overflow-hidden bg-[#060d1e] py-24">
+        <div
+          className="pointer-events-none absolute bottom-0 left-10 h-[400px] w-[400px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(249,115,22,0.07) 0%, transparent 70%)" }}
+        />
+        <div className="relative mx-auto max-w-6xl px-6">
+          <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
+
+            {/* Text */}
+            <div className="w-full lg:w-1/2">
+              <Reveal>
+                <p className="section-label text-orange-400">Por qué elegirnos</p>
+                <h2 className="mt-3 font-heading text-3xl font-extrabold text-white lg:text-4xl">
+                  Precio cerrado y equipo propio
+                </h2>
+                <p className="mt-4 text-lg text-slate-400">
+                  Sabemos que lo más importante es la tranquilidad. Con Mudanzas Dokino, el precio que presupuestamos es el precio que pagas.
+                </p>
+                <ul className="mt-8 space-y-4">
+                  {[
+                    "Seguro a todo riesgo incluido en cada presupuesto.",
+                    "Montaje y desmontaje por carpinteros profesionales.",
+                    "Flota propia de vehículos — sin subcontratas.",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="shrink-0 text-emerald-500" aria-hidden="true">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                        <path d="M22 4L12 14.01l-3-3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      <span className="text-slate-300">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </Reveal>
-            ))}
+            </div>
+
+            {/* Visual */}
+            <Reveal delayMs={150} className="w-full lg:w-1/2">
+              <div className="glass-card relative h-[300px] overflow-hidden rounded-2xl lg:h-[400px]">
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px)", backgroundSize: "32px 32px" }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="relative">
+                    <div className="absolute -inset-0 h-16 w-16 animate-ping rounded-full bg-orange-500 opacity-20" />
+                    <div className="relative flex h-16 w-16 items-center justify-center rounded-full border-2 border-white/20 bg-orange-500 shadow-xl shadow-orange-500/40">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/>
+                        <circle cx="5.5" cy="18.5" r="2.5" fill="white" stroke="none"/>
+                        <circle cx="18.5" cy="18.5" r="2.5" fill="white" stroke="none"/>
+                      </svg>
+                    </div>
+                    <div className="pointer-events-none absolute -inset-8 rounded-full border border-orange-500/20" />
+                    <div className="pointer-events-none absolute -inset-16 rounded-full border border-orange-500/10" />
+                    <div className="pointer-events-none absolute -inset-24 rounded-full border border-orange-500/5" />
+                  </div>
+                </div>
+                <div className="glass-card absolute bottom-5 left-5 rounded-lg px-3 py-2">
+                  <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+                    <span className="font-heading text-xs font-bold tracking-widest text-white">GPS ACTIVO</span>
+                  </div>
+                </div>
+                <div className="glass-card absolute right-5 top-5 rounded-lg px-3 py-2">
+                  <span className="font-heading text-xs font-bold tracking-widest text-orange-400">BCN · ESP</span>
+                </div>
+              </div>
+            </Reveal>
+
           </div>
         </div>
       </section>
 
       {/* ── CÓMO TRABAJAMOS ───────────────────────────────── */}
       <section className="relative overflow-hidden bg-[#060d1e] py-24">
-        {/* Subtle grid */}
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.025]"
           style={{
@@ -200,29 +353,19 @@ export default function HomePage() {
             backgroundSize: "48px 48px",
           }}
         />
-        {/* Orange blob */}
-        <div
-          className="pointer-events-none absolute -bottom-40 right-0 h-[400px] w-[400px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(249,115,22,0.1) 0%, transparent 70%)" }}
-        />
 
-        <div className="relative mx-auto max-w-7xl px-6">
+        <div className="relative mx-auto max-w-6xl px-6">
           <Reveal>
             <p className="section-label text-orange-400">El proceso</p>
-            <h2 className="mt-3 font-heading text-4xl font-extrabold text-white md:text-5xl">
-              Cómo trabajamos
-            </h2>
-            <p className="mt-3 max-w-xl text-lg text-slate-400">
-              Claro, sencillo y sin sorpresas. Cuatro pasos y tu mudanza está hecha.
-            </p>
+            <h2 className="mt-3 font-heading text-4xl font-extrabold text-white md:text-5xl">Cómo trabajamos</h2>
+            <p className="mt-3 max-w-xl text-lg text-slate-400">Claro, sencillo y sin sorpresas. Cuatro pasos y tu mudanza está hecha.</p>
           </Reveal>
 
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((step, i) => (
               <Reveal key={step.n} delayMs={i * 100}>
                 <TiltCard intensity={6}>
-                  <div className="glass rounded-2xl p-6 h-full">
-                    {/* Step number + icon */}
+                  <div className="glass-card h-full rounded-2xl p-6">
                     <div className="flex items-start justify-between">
                       <span className="font-heading text-6xl font-extrabold leading-none text-orange-500/15 select-none">
                         {step.n}
@@ -231,13 +374,8 @@ export default function HomePage() {
                         {step.icon}
                       </span>
                     </div>
-                    {/* Connector line */}
-                    <h3 className="mt-3 font-heading text-base font-bold text-white">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                      {step.body}
-                    </p>
+                    <h3 className="mt-3 font-heading text-base font-bold text-white">{step.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-400">{step.body}</p>
                   </div>
                 </TiltCard>
               </Reveal>
@@ -247,11 +385,15 @@ export default function HomePage() {
       </section>
 
       {/* ── TESTIMONIOS ───────────────────────────────────── */}
-      <section className="bg-paper py-24">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative bg-[#060d1e] py-24">
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px)", backgroundSize: "48px 48px" }}
+        />
+        <div className="relative mx-auto max-w-6xl px-6">
           <Reveal>
-            <p className="section-label text-orange-500">Lo que dicen nuestros clientes</p>
-            <h2 className="mt-3 font-heading text-4xl font-extrabold text-ink md:text-5xl">
+            <p className="section-label text-orange-400">Lo que dicen nuestros clientes</p>
+            <h2 className="mt-3 font-heading text-4xl font-extrabold text-white md:text-5xl">
               Más de 300 mudanzas realizadas
             </h2>
           </Reveal>
@@ -260,9 +402,9 @@ export default function HomePage() {
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={t.name} delayMs={i * 100}>
                 <TiltCard intensity={7}>
-                  <div className="flex h-full flex-col rounded-2xl border border-line bg-white p-7 shadow-sm transition-shadow hover:shadow-md">
+                  <div className="glass-card flex h-full flex-col rounded-2xl p-7">
                     <Stars n={t.stars} />
-                    <p className="mt-4 flex-1 text-sm leading-relaxed text-ink-muted">
+                    <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-400">
                       &ldquo;{t.text}&rdquo;
                     </p>
                     <div className="mt-6 flex items-center gap-3">
@@ -270,8 +412,8 @@ export default function HomePage() {
                         {t.initial}
                       </div>
                       <div>
-                        <p className="text-sm font-bold text-ink">{t.name}</p>
-                        <p className="text-xs text-ink-muted">{t.role}</p>
+                        <p className="text-sm font-bold text-white">{t.name}</p>
+                        <p className="text-xs text-slate-500">{t.role}</p>
                       </div>
                     </div>
                   </div>
@@ -283,20 +425,19 @@ export default function HomePage() {
       </section>
 
       {/* ── POR QUÉ DOKINO ────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-slate-950 py-24">
+      <section className="relative overflow-hidden bg-[#060d1e] py-24">
         <div
           className="pointer-events-none absolute top-0 left-1/2 h-[350px] w-[700px] -translate-x-1/2 rounded-full"
           style={{ background: "radial-gradient(ellipse, rgba(249,115,22,0.06) 0%, transparent 70%)" }}
         />
-        <div className="relative mx-auto max-w-7xl px-6">
+        <div className="relative mx-auto max-w-6xl px-6">
           <Reveal>
             <p className="section-label text-orange-400">Por qué elegir Dokino</p>
             <h2 className="mt-3 font-heading text-4xl font-extrabold text-white md:text-5xl">
               Sin intermediarios.<br className="hidden sm:block" /> Sin sorpresas.
             </h2>
             <p className="mt-3 max-w-xl text-lg text-slate-400">
-              Somos una empresa pequeña y directa. Eso significa que la persona que
-              presupuesta tu mudanza es la misma que la hace.
+              Somos una empresa pequeña y directa. Eso significa que la persona que presupuesta tu mudanza es la misma que la hace.
             </p>
           </Reveal>
 
@@ -304,12 +445,10 @@ export default function HomePage() {
             {FEATURES.map((f, i) => (
               <Reveal key={f.title} delayMs={i * 80}>
                 <div className="group flex flex-col gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-500/10 text-orange-400 transition-all duration-300 group-hover:bg-orange-500/20 group-hover:scale-110">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-500/10 text-orange-400 transition-all duration-300 group-hover:scale-110 group-hover:bg-orange-500/20">
                     {f.icon}
                   </div>
-                  <h3 className="font-heading text-base font-bold text-white">
-                    {f.title}
-                  </h3>
+                  <h3 className="font-heading text-base font-bold text-white">{f.title}</h3>
                   <p className="text-sm leading-relaxed text-slate-400">{f.body}</p>
                 </div>
               </Reveal>
@@ -320,15 +459,10 @@ export default function HomePage() {
 
       {/* ── CTA BANNER ────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-orange-500 py-20">
-        {/* Dot pattern */}
         <div
           className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
+          style={{ backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px)", backgroundSize: "24px 24px" }}
         />
-        {/* Gradient overlays */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-orange-600 to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-orange-600 to-transparent" />
 
@@ -339,8 +473,7 @@ export default function HomePage() {
               ¿Tienes una mudanza en mente?
             </h2>
             <p className="mt-4 text-lg text-orange-100">
-              Cuéntanos los detalles y te respondemos con un presupuesto exacto,
-              sin compromiso.
+              Cuéntanos los detalles y te respondemos con un presupuesto exacto, sin compromiso.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link
