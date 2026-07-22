@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { whatsappHref } from "@/lib/constants";
 import Counter from "@/components/Counter";
-import ParticleField from "@/components/ParticleField";
 import TruckAnimation from "@/components/TruckAnimation";
 
 export default function Hero() {
@@ -17,8 +16,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-[94vh] overflow-hidden bg-[#060d1e] noise-overlay flex flex-col">
 
-      {/* ── Background effects ───────────────────────────────── */}
-      <ParticleField className="opacity-100" />
+      {/* ── Background: dot grid only (no particle field) ────── */}
       <div className="scan-line" />
 
       {/* Orange blobs only — DESIGN.md: no purple */}
@@ -130,13 +128,38 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Right column — 3D truck animation */}
+            {/* Right column — circular container with 3D animation */}
             <div
               className={`hidden md:flex md:col-span-5 items-center justify-center transition-all duration-1000 delay-300 ease-out ${
                 mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
             >
-              <TruckAnimation className="h-[420px] w-full" />
+              <div className="relative flex h-[380px] w-[380px] items-center justify-center lg:h-[420px] lg:w-[420px]">
+                {/* Outer circle border */}
+                <div className="absolute inset-0 rounded-full border border-white/[0.06] bg-gradient-to-tr from-slate-900/80 to-transparent" />
+                {/* Inner pulse ring */}
+                <div className="absolute inset-4 rounded-full bg-orange-500/5 animate-pulse" />
+                {/* Three.js animation clipped to circle */}
+                <div className="absolute inset-0 overflow-hidden rounded-full">
+                  <TruckAnimation className="h-full w-full" />
+                </div>
+                {/* Spinning dashed ring */}
+                <div className="animate-wheel-border pointer-events-none absolute inset-0 rounded-full border-2 border-dashed border-orange-500/20" />
+                {/* Floating glass card — top right */}
+                <div className="glass-card absolute -right-4 -top-4 flex items-center gap-2 rounded-xl px-3 py-2 shadow-xl">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-orange-500/20">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    </svg>
+                  </div>
+                  <span className="font-heading text-xs font-bold text-white">+300 mudanzas</span>
+                </div>
+                {/* Floating glass card — bottom left */}
+                <div className="glass-card absolute -bottom-3 -left-4 flex items-center gap-2 rounded-xl px-3 py-2 shadow-xl">
+                  <div className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+                  <span className="font-heading text-xs font-bold tracking-widest text-white">GPS ACTIVO</span>
+                </div>
+              </div>
             </div>
 
           </div>

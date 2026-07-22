@@ -8,18 +8,18 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-white/95 shadow-sm backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-white/[0.06] bg-[#060d1e]/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0d2b5e] font-heading text-sm font-extrabold shadow-sm" style={{ color: "#FFE000" }}>
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange-500 font-heading text-sm font-extrabold shadow-lg shadow-orange-500/25 text-white">
             D
           </span>
           <div className="flex flex-col leading-none">
-            <span className="font-heading text-base font-extrabold tracking-tight text-ink">
+            <span className="font-heading text-base font-extrabold tracking-tight text-white">
               Dokino
             </span>
-            <span className="text-[10px] font-medium tracking-wide text-ink-muted">
+            <span className="text-[10px] font-medium tracking-wide text-slate-400">
               Transportes y mudanzas
             </span>
           </div>
@@ -31,7 +31,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-ink-muted transition-colors hover:text-ink"
+              className="text-sm font-medium text-slate-400 transition-colors hover:text-white"
             >
               {link.label}
             </Link>
@@ -43,7 +43,7 @@ export default function Header() {
           {SITE.phoneDisplay !== "PENDIENTE" && (
             <a
               href={`tel:${SITE.phoneDisplay}`}
-              className="flex items-center gap-1.5 text-sm font-semibold text-ink-muted transition-colors hover:text-ink"
+              className="flex items-center gap-1.5 text-sm font-semibold text-slate-400 transition-colors hover:text-white"
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path
@@ -59,7 +59,7 @@ export default function Header() {
           )}
           <Link
             href="/presupuesto/"
-            className="rounded-lg bg-orange-500 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-orange-600 hover:shadow-md"
+            className="rounded-lg bg-orange-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-orange-500/25 transition-all hover:-translate-y-0.5 hover:bg-orange-600"
           >
             Pedir presupuesto
           </Link>
@@ -71,7 +71,7 @@ export default function Header() {
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="flex h-9 w-9 items-center justify-center rounded-lg border border-line md:hidden"
+          className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 md:hidden"
         >
           <span className="sr-only">Menú</span>
           <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -96,14 +96,14 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-line bg-white md:hidden">
+        <div className="border-t border-white/[0.06] bg-[#060d1e] md:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-4">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-ink-muted hover:bg-slate-50 hover:text-ink"
+                className="rounded-lg px-3 py-2.5 text-sm font-medium text-slate-400 hover:bg-white/5 hover:text-white"
               >
                 {link.label}
               </Link>
