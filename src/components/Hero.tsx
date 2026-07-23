@@ -127,22 +127,27 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Right column — cinematic photo panel with Ken Burns animation */}
+            {/* Right column — real video (Pexels stock, composited) */}
             <div
               className={`hidden md:flex md:col-span-5 items-center justify-center transition-all duration-1000 delay-300 ease-out ${
                 mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
             >
               <div className="relative w-full h-[460px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-                {/* Photo with Ken Burns slow zoom */}
-                <div
-                  className="ken-burns absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAlqTqjiNDfd5CAUmRihH0Y4rvUYmGHcJGW9Y3IoUfPyYb9JRhf1d1cTVZiNpFQU7ZUMzYpjnXyYRFcGeZPoGZ6w6HWSU9M5CLDW2iaXh0C6ZfOadG74JP03L_P2lwjYiPqqpbGlEnJ_Fz5qKRPdNhUAcNSAHPL-f6do1RzgkGjSTaROVuibuRxX-ZRSU7CBMn0UJJjhoJcyhqg4sne1F5Dc3HP5olGue2O1MVonMg9WoGIzHkYDj6a67VwWYlTXAJiE6-dkcIMpU4')" }}
+                {/* Background video — autoplay, loop, muted */}
+                <video
+                  className="absolute inset-0 h-full w-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/videos/hero.mp4`}
                 />
-                {/* Gradient overlays for dark blend */}
+                {/* Gradient overlays */}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#060d1e]/85 via-[#060d1e]/15 to-transparent" />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#060d1e]/35 to-transparent" />
-                {/* Subtle border ring */}
+                {/* Border ring */}
                 <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/[0.07]" />
                 {/* Orange accent line bottom */}
                 <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-orange-500/70 via-orange-400 to-transparent" />
