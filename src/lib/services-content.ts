@@ -42,16 +42,17 @@ export const SERVICES_CONTENT: ServiceContent[] = [
   },
   {
     slug: "guardamuebles",
-    name: "Guardamuebles",
+    name: "Traslado a guardamuebles",
     metaDescription:
-      "Almacenaje seguro de tus muebles y pertenencias mientras dura tu mudanza o reforma.",
+      "Recogemos tus muebles y los trasladamos a un guardamuebles mientras dura tu mudanza o reforma en Barcelona.",
     intro:
-      "Si necesitas guardar tus muebles unos días, semanas o meses mientras terminas una mudanza o una reforma, nos encargamos del almacenaje en condiciones seguras y te lo devolvemos cuando lo necesites.",
+      "Cuando la fecha de entrada y salida no cuadran, o mientras dura una reforma, nos encargamos de recoger tus muebles y trasladarlos a un guardamuebles. Cuando estés listo, los buscamos y te los llevamos a tu nuevo domicilio.",
     includes: [
       "Recogida en tu domicilio o local",
-      "Almacenaje por el tiempo que necesites",
+      "Traslado al guardamuebles",
       "Entrega programada cuando estés listo",
-      "Ideal para mudanzas con fecha de entrada ajustada",
+      "Seguro de transporte incluido en ambos trayectos",
+      "Ideal para mudanzas con fecha de entrada ajustada o reformas largas",
     ],
     icon: "guardamuebles",
   },

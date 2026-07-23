@@ -42,11 +42,11 @@ const SERVICES = [
   {
     slug: "guardamuebles",
     href: "/servicios/guardamuebles/",
-    title: "Guardamuebles",
-    desc: "Instalaciones vigiladas 24/7 con control de clima y sistemas contra incendios de última generación. Espacios privados desde 5m³.",
+    title: "Traslado a guardamuebles",
+    desc: "Recogemos tus muebles y los trasladamos a un guardamuebles de confianza. Cuando estés listo, los devolvemos a tu nuevo domicilio.",
     stats: [
-      { value: "24h", label: "Vigilancia" },
-      { value: "Safe", label: "Contenedores" },
+      { value: "Flex", label: "Duración" },
+      { value: "Seguro", label: "Incluido" },
     ],
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

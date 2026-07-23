@@ -244,7 +244,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h3 className="font-heading text-xl font-extrabold text-white">Guardamuebles</h3>
-                  <p className="mt-2 text-sm text-slate-400">Espacios seguros, vigilados 24/7 y con control de humedad.</p>
+                  <p className="mt-2 text-sm text-slate-400">Trasladamos tus muebles a un guardamuebles mientras dura la mudanza o reforma.</p>
                 </div>
               </Link>
             </Reveal>

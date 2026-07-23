@@ -40,7 +40,7 @@ export const SERVICES = [
   {
     slug: "guardamuebles",
     name: "Guardamuebles",
-    short: "Almacenaje seguro mientras dura tu mudanza o reforma.",
+    short: "Trasladamos tus muebles a un guardamuebles mientras dura tu mudanza o reforma.",
     icon: "guardamuebles",
     color: "violet",
   },
